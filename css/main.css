@@ -1,0 +1,286 @@
+.banner {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1C2135,#5A6794);
+}
+
+.banner::before {
+    content: 'ZOOMX';
+    position: absolute;
+    font-size: 25vw;
+    color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+}
+
+.banner nav {
+    /* padding: 20px 10%;
+    position: absolute; */
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #FFF;
+    padding-top: 20px;
+}
+
+
+.banner nav img {
+    max-width: 100px;
+}
+
+.banner nav i {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.banner nav i:hover {
+    color: #8794C0;
+}
+
+/* End Nav */
+
+/* Start Content */
+
+.banner .content {
+    position: relative;
+    width: 100%;
+    /* padding-top: 100px; */
+    padding-top: 55px;
+}
+
+.banner .content .imgBx {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .content .imgBx img {
+    max-width: 100%;
+}
+
+.banner .content .imgBx img.anime {
+    animation: fase_ins 1s linear forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.banner .content .imgBx img.animee {
+    animation: fase_in 1s linear forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.banner .content .text h2 {
+    font-weight: 900;
+    color: #FFF;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+
+.banner .content .text p {
+    color: #FFF;
+}
+
+
+.banner .content .text a {
+    background-color: #FFF;
+    color: #1C2135;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 60px;
+}
+
+.banner .content .text a:hover {
+    background-color: #1C2135;
+    color: #FFF;
+}
+
+/* End Content */
+
+
+/* Start Bullets */
+
+.banner .bullets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* top: 80px; */
+    top: 40px;
+    z-index: 1000;
+}
+
+.banner .bullets i {
+    margin: 0 5px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+
+.banner .bullets i.active {
+    color: #5A6794;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+}
+
+/* End bullets */
+
+/* Start Bars */
+
+.bars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,#8794C0,#5A6794,#1C2135);
+    z-index: 100000;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
+
+.bars .list-unstyled .sci {
+    padding-left: 0;
+    margin-top: 40px;
+}
+
+.bars .list-unstyled .sci a {
+    color: #FFF;
+    margin-right: 10px;
+    transition: all 0.2s ease-in-out;
+
+}
+
+.bars .list-unstyled .sci a:last-of-type {
+    margin-right: 0;
+}
+
+.bars .list-unstyled .sci a:hover {
+    color: #8794C0;
+}
+
+.bars i.fa-times {
+    color: #FFF;
+    position: absolute;
+    top: 20px;
+    right: 10%;
+    cursor: pointer;
+}
+
+.bars .list-unstyled {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bars .list-unstyled li {
+    margin-top: 40px;
+}
+
+.bars .list-unstyled li:first-of-type {
+    margin-top: 0;
+}
+
+.bars .list-unstyled li a {
+    color: #FFF;
+    font-size: 2.5em;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* End Bars */
+
+/* Start Anim */
+
+
+
+@keyframes fase_in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fase_ins {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* End Anime */
+
+/* Start Media */
+
+@media (max-width: 1300px) {
+    .banner .sci {
+        bottom: 50%;
+        right: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .banner .content .text a {
+        margin-top: 10px;
+    }
+    .bars .sci {
+        bottom: 40px;
+        right: 30px;
+        flex-direction: row;
+        opacity: 0;
+        visibility: visible;
+        position: relative;
+        z-index: 10000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        bottom: 0;
+        margin-top: 40px;
+    }
+    .bars .sci a {
+        margin-top: 0;
+        margin-right: 15px;
+    }
+    .bars .sci a:last-of-type {
+        margin-top: 0;
+        margin-right: 0;
+    }
+    .banner::before {
+        font-size: 20vw;
+    }
+}
+
+@media (min-width: 767px) {
+    .bars {
+        width: 30%;
+        right: 0;
+        opacity: 0.5;
+    }
+}
+
+/* End Media */
